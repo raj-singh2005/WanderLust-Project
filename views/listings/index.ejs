@@ -1,0 +1,134 @@
+
+
+<style>
+  #filter{
+    text-align: center;
+    color: rgb(68, 66, 66);
+    margin-right: 2.2rem;
+    font-size: 1.5rem;
+    opacity: 0.6;
+    height: 100%;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+   
+  }
+
+  #filter:hover{
+   opacity: 1;
+  }
+
+#filter p{
+  font-size: 1rem;
+
+}
+  #filters{
+    display: flex;
+    padding: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .tax-info{
+    display: none;
+  }
+  .tax-toggle{
+    border: 1px solid grey ;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    box-shadow: inset 0px 0px 10px grey;
+    font-weight: 600;
+    color: rgb(49, 47, 47);
+  }
+</style>
+
+<% layout("/layouts/boilerplate") %>
+<body>
+  
+  <div id="filters">
+    <div id="filter">
+      <div><i class="fa-solid fa-fire"></i></div>
+      <p>Trending</p>
+    </div>
+
+    <div id="filter">
+      <div><i class="fa-solid fa-bed"></i></div>
+      <p>Rooms</p>
+    </div>
+
+    <div id="filter">
+      <div><i class="fa-solid fa-mountain-city"></i></div>
+      <p>Iconic Cities</p>
+    </div>
+
+    
+    <div id="filter">
+      <div><i class="fa-solid fa-mountain-sun"></i></div>
+      <p>Mountains</p>
+    </div>
+
+    
+    <div id="filter">
+      <div><i class="fa-brands fa-fort-awesome"></i></div>
+      <p>Castles </p>
+    </div>
+
+    <div id="filter">
+      <div><i class="fa-solid fa-person-swimming"></i></div>
+      <p>Amazing Pools </p>
+    </div>
+    <div id="filter">
+      <div><i class="fa-solid fa-tents"></i></div>
+      <p>Camping</p>
+    </div>
+    <div id="filter">
+      <div><i class="fa-solid fa-cow"></i></div>
+      <p>Farms</p>
+    </div>
+
+    <div class="tax-toggle">
+      <div class="form-check-reverse form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Display Including Taxes : </label>
+      </div>
+    </div>
+
+  </div>
+   
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+    <% for(let listing of allListing) { %>
+        <a href="/listings/<%= listing._id %>" style="text-decoration: none;">
+    <div class="card col listing-card" >
+        <img class="card-img-top" src="<%= listing.image.url %>" alt="Listing_image" style="height: 20rem;">
+        <div class="card-img-overlay" style="height: 20rem;">WanderLust</div>
+        <div class="card-body">
+          <h5 class="card-title"> <b><%= listing.title %></b> <br> <span class="price">₹<%=listing.price.toLocaleString("en-IN") %> / night <i style="font-size: 1rem;" class="tax-info"> &nbsp; + 18% GST</i></span></h5>
+          <form method="get" action="/listings/<%= listing._id %>">
+          <button type="button" class="btn btn-outline-danger">Details</button>
+        </form>
+        </div>
+      </div>
+    </a>
+      <% } %>
+      
+    </div>
+    
+   
+</body>
+
+
+<script>
+  let taxSwitch = document.querySelector("#flexSwitchCheckDefault");
+  taxSwitch.addEventListener("click",()=>{
+    let taxInfo = document.getElementsByClassName("tax-info");
+    for(info of taxInfo){
+      if(info.style.display !== "inline"){
+        info.style.display = "inline" ;
+      }else{
+        info.style.display = "none" ;
+      }
+    }
+  })
+</script>

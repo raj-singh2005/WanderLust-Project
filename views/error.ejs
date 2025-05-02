@@ -1,0 +1,9 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="alert alert-danger d-flex align-items-center mt-3" role="alert" >
+   
+    <div>
+    <b><i class="fa-solid fa-triangle-exclamation"></i> Error : <%= err.statusCode %></b>
+    <p><%= err.message %> <i class="fa-solid fa-heart-crack"></i></p>
+    </div>
+  </div>

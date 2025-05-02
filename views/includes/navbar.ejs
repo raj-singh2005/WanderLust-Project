@@ -1,0 +1,50 @@
+<style>
+  .btn-success{
+    background-color: #fe424d;
+    color: white;
+    border: none;
+    border-radius: 50%;
+  }
+  .btn-success:hover{
+    background-color: #fe424d;
+  }
+  .search-input{
+    border-radius: 2rem;
+    margin-right: 5px;
+
+  }
+</style>
+
+
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i>  <span class="logotxt">WanderLust</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse nav-l" id="navbarNavAltMarkup">
+        <div class="navbar-nav navbar-nav1">
+          <a class="nav-link" href="/listings">Explore</a>
+         
+         
+        </div>
+        <div class="navbar-nav ms-auto px-2">
+          <form class="d-flex">
+            <input class="form-control me-2b search-input ps-5 pe-4" type="search" placeholder="Search Destinations" aria-label="Search">
+            <button class="btn btn-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+        </div>
+        <div class="navbar-nav ms-auto ">
+          <a class="nav-link " href="/listings/new">Airbnb Your Home</a>
+          <% if(!currUser){ %>
+          <a class="nav-link "  href="/signup"><b>SignUp</b></a>
+          <a class="nav-link me-2" href="/login"><b>Login</b></a>
+          <%}%>
+          <% if(currUser){ %>
+          <a class="nav-link me-2" href="/logout"><b>LogOut</b></a>
+          <%}%>
+         
+        </div>
+      </div>
+    </div>
+  </nav>
