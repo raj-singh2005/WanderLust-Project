@@ -73,9 +73,11 @@
                       <p class="card-text"><%= review.comment %></p>
                    
                     </div>
+                    <%if(currUser &&currUser._id.equals(review.author._id)){%>
                     <form method="post" action="/listings/<%=listing._id%>/reviews/<%=review._id%>?_method=DELETE">
                         <button  class="btn btn-outline-danger mt-2">Delete</button>
                      </form>
+                     <% } %>
                   </div>
             
 
@@ -94,7 +96,6 @@
           const listingLatitude = <%= listing.latitude %>
           const listingLongitude = <%= listing.longitude %>
         
-          console.log("Latitude:", listingLatitude, "Longitude:", listingLongitude); // Keep this for debugging
         
           var map = L.map('mapid').setView([listingLatitude, listingLongitude], 13);
         

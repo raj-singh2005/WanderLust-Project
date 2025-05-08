@@ -9,7 +9,7 @@ body{
 }
 
 .navbar{
-    height: 5rem;
+    height: 4.5rem;
     background-color: white;
     box-shadow: 0px 2px 5px black;
 }
@@ -38,12 +38,12 @@ body{
     padding: 0;
 }
 .navbar-toggler{
-    margin-right: 1rem;
+    margin-right: 0.8rem;
 }
 .nav-link{
     color: #222222;
-    margin-left: 1rem;
-    font-size: 1.2rem;
+    margin-left: 0.8rem;
+    font-size: 1.1rem;
    
     
 }
@@ -62,6 +62,21 @@ body{
     margin-left: 1rem;
     /* text-shadow: 0px 0px 1px black; */
 }
+
+.search-btn{
+    background-color: #fe424d;
+    color: white;
+    border: none;
+    border-radius: 50%;
+  }
+  .search-btn:hover{
+    background-color: #fe424d;
+  }
+  .search-input{
+    border-radius: 2rem;
+    margin-right: 5px;
+
+  }
 
 .f-info-links a{
     text-decoration: none;
@@ -90,6 +105,7 @@ body{
     font-size: 1.3rem;
     margin: 0px 0.7rem;
     margin-top: 0.7rem;
+    color: black;
 }
 .f-info-socials{
     width: 100%;
@@ -100,6 +116,8 @@ body{
     font-weight: 600;
     opacity: 0.5;
 }
+
+
 
 /* card */
 
@@ -168,3 +186,49 @@ body{
     padding: 1rem;
     border: 5px solid rgb(158, 151, 151);
 }
+
+
+/* index */
+
+#filter{
+    text-align: center;
+    color: rgb(68, 66, 66);
+   
+    font-size: 1.2rem;
+    opacity: 0.6;
+    height: 100%;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+
+   
+  }
+
+  #filter:hover{
+   opacity: 1;
+  }
+
+#filter p{
+  font-size: 1rem;
+
+}
+  #filters{
+    display: flex;
+    padding: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    
+  }
+
+  .tax-info{
+    display: none;
+  }
+  .tax-toggle{
+    border: 1px solid grey ;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    box-shadow: inset 0px 0px 10px grey;
+    font-weight: 600;
+    color: rgb(49, 47, 47);
+  }
